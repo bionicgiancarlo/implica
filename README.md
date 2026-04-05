@@ -34,11 +34,12 @@ flowchart TB
     AGENT -->|"reads"| RAW
     AGENT -->|"writes|updates"| PAGES
     AGENT -->|"updates"| NAV
-    AGENT -->|"commits"| GIT
+    AGENT -->|"commits"| REPO
     PAGES -->|"power queries"| NAV
 
-    subgraph GIT["🔀 Git: github.com/bionicgiancarlo/implica"]
-        GIT
+    subgraph REPO["🔀 GitHub: bionicgiancarlo/implica"]
+        R1["Version history"]
+        R2["Every change = commit"]
     end
 ```
 

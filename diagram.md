@@ -3,62 +3,36 @@
 ```mermaid
 flowchart TB
     subgraph USER["👤 YOU (Gabriele)"]
-        direction TB
         U1["Drop sources into raw/sources/"]
         U2["Ask questions via Telegram"]
-        U3["Direct Giancarlo's analysis"]
-        U4["Browse the wiki in GitHub"]
+        U3["Browse the wiki on GitHub"]
     end
 
     subgraph AGENT["🧠 GIANCARLO (LLM Agent)"]
-        direction TB
         A1["Ingest Workflow"]
         A2["Query Workflow"]
         A3["Lint Workflow"]
     end
 
-    subgraph WIKI["📚 THE WIKI (Persistent Knowledge)"]
-        direction LR
-        
-        subgraph RAW["RAW SOURCES (Immutable)"]
-            RS1["papers/"]
-            RS2["articles/"]
-            RS3["notes/"]
-        end
-
-        subgraph PAGES["WIKI PAGES (LLM-generated)"]
-            direction TB
-            WP1["🟦 entities/"]
-            WP2["🟩 concepts/"]
-            WP3["🟪 sources/"]
-            WP4["🟫 syntheses/"]
-            WP5["⬛ comparisons/"]
-            WP6["⬜ overviews/"]
-        end
-
-        subgraph NAV["NAVIGATION"]
-            IDX["📋 index.md"]
-            LOG["📝 log.md"]
-            README["📖 README.md"]
-        end
-    end
-
-    subgraph GIT["🔀 GIT REPO"]
-        G1["github.com/bionicgiancarlo/implica"]
-        G2["Every change = commit"]
-        G3["Full version history"]
-    end
-
     USER -->|"Telegram"| AGENT
     U1 -->|"drop file"| RAW
-    
+
+    subgraph WIKI["📚 THE WIKI"]
+        RAW["📁 raw/sources/"] 
+        PAGES["📄 wiki/{entities,concepts,sources,syntheses,comparisons,overviews}/"]
+        NAV["📋 index.md + 📝 log.md"]
+    end
+
     AGENT -->|"reads"| RAW
-    AGENT -->|"writes/updates"| PAGES
-    AGENT -->|"updates on every ingest"| NAV
-    AGENT -->|"commits every operation"| GIT
-    
-    PAGES -->|"powers queries"| NAV
-    NAV -->|"navigates"| PAGES
+    AGENT -->|"writes|updates"| PAGES
+    AGENT -->|"updates"| NAV
+    AGENT -->|"commits"| REPO
+    PAGES -->|"power queries"| NAV
+
+    subgraph REPO["🔀 GitHub: bionicgiancarlo/implica"]
+        R1["Version history"]
+        R2["Every change = commit"]
+    end
 ```
 
 ## Operations
