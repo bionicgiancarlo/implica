@@ -24,10 +24,10 @@ flowchart TB
     end
 
     AGENT -->|"reads"| RAW
-    AGENT -->|"writes|updates"| PAGES
+    AGENT -->|"writes & updates"| PAGES
     AGENT -->|"updates"| NAV
     AGENT -->|"commits"| REPO
-    PAGES -->|"power queries"| NAV
+    PAGES -->|"powers queries"| NAV
 
     subgraph REPO["🔀 GitHub: bionicgiancarlo/implica"]
         R1["Version history"]

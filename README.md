@@ -32,10 +32,10 @@ flowchart TB
     end
 
     AGENT -->|"reads"| RAW
-    AGENT -->|"writes|updates"| PAGES
+    AGENT -->|"writes & updates"| PAGES
     AGENT -->|"updates"| NAV
     AGENT -->|"commits"| REPO
-    PAGES -->|"power queries"| NAV
+    PAGES -->|"powers queries"| NAV
 
     subgraph REPO["🔀 GitHub: bionicgiancarlo/implica"]
         R1["Version history"]
@@ -48,13 +48,13 @@ flowchart TB
 ```
 implica/
 ├── wiki/                   # LLM-generated pages
-│   ├── entities/          # Specific things (GPT-4, ChatGPT, people...)
+│   ├── entities/          # Specific things (people, products, companies...)
 │   ├── concepts/          # Abstract ideas (reasoning, attention, OOD...)
 │   ├── sources/           # Per-source summaries
 │   ├── syntheses/         # Cross-source synthesis
 │   ├── comparisons/       # Side-by-side comparisons
 │   └── overviews/         # Broad topic overviews
-├── raw/sources/           # Immutable source documents
+├── raw/sources/           # Immutable source documents (drop here)
 ├── schema.md              # Conventions and workflows
 ├── index.md               # Content catalog
 ├── log.md                 # Chronological record
@@ -97,4 +97,4 @@ See [[log.md]] for the full timeline.
 
 ---
 
-*Wiki initialized: 2026-04-05 | Maintained by Giancarlo 🧠*
+*Wiki ready: 2026-04-05 | Maintained by Giancarlo 🧠*

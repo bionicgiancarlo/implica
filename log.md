@@ -4,20 +4,9 @@ Chronological record of wiki operations. Append-only.
 
 ---
 
-## [2026-04-05] init | Wiki created
-- Created directory structure
-- Added WIKI.md (the idea file)
-- Added schema.md (conventions and workflows)
-- Initialized index.md
-- Initialized log.md
-
-## [2026-04-05] ingest | GPT-4 Logical Reasoning Evaluation (arXiv:2304.03439)
-- Added source file: raw/sources/source-2026-04-05-gpt4-logical-reasoning.md
-- Added summary page: wiki/sources/source-2026-04-05-gpt4-logical-reasoning.md
-- Added entity pages: [[entities/gpt-4]], [[entities/chatgpt]]
-- Added concept pages: [[concepts/logical-reasoning]], [[concepts/llm-evaluation]], [[concepts/out-of-distribution-generalization]]
-- Cross-referenced all pages
-- Updated index.md
+## [2026-04-05] reset | Wiki cleared
+- Removed all ingested sources and wiki pages
+- Wiki is now empty — ready for Gabriele's sources
 
 ---
 
